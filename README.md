@@ -38,3 +38,7 @@ CREATE TABLE demo.customer (cust_id TEXT, cust_name TEXT, cust_age TEXT );
 
 ## New table
 CREATE TABLE demo.customercrawler (cust_id BIGINT, cust_name TEXT, cust_age BIGINT);
+
+## Redshift Role ARN
+
+arn:aws:iam::786461327180:role/HKSOregonRedShiftRole
