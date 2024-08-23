@@ -16,3 +16,13 @@ SELECT  date, positivePercentageNY, positivePercentageCA
 FROM    positivepercentage 
         pivot (avg(positivePercentage) as positivePercentage 
         for state in ('NY' as positivePercentageNY, 'CA' as positivePercentageCA))
+
+
+
+##Create Table
+CREATE TABLE demo.customer
+(
+    cust_id INT,
+    cust_name TEXT,
+    cust_age INT
+);
