@@ -60,3 +60,10 @@ CREATE EXTERNAL TABLE spectrum_schema.spectrum_table (
 ROW FORMAT DELIMITED
 FIELDS TERMINATED BY ','
 LOCATION 's3://hks-demo-s3-bucket/input-state-csv/';
+
+
+## Redshift Spectrum Fetching record from Internal and External Table using Join
+
+select * from demo.customer c
+JOIN spectrum_schema.orders o 
+ON c.cust_id= o.customer_id;
