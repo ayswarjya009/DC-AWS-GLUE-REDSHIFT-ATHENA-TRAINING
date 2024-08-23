@@ -19,7 +19,10 @@ FROM    positivepercentage
 
 
 
-## Create Table
+## Create schema and Table
+
+CREATE SCHEMA demo;
+
 CREATE TABLE demo.customer
 (
     cust_id INT,
