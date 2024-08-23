@@ -42,3 +42,11 @@ CREATE TABLE demo.customercrawler (cust_id BIGINT, cust_name TEXT, cust_age BIGI
 ## Redshift Role ARN
 
 arn:aws:iam::786461327180:role/HKSOregonRedShiftRole
+
+## Redshift Spectrum External Schema
+
+CREATE EXTERNAL SCHEMA spectrum_schema
+FROM DATA CATALOG
+DATABASE 'hks-redshift-rs-db'
+IAM_ROLE 'arn:aws:iam::786461327180:role/HKSOregonRedShiftRole'
+CREATE EXTERNAL DATABASE IF NOT EXISTS;
