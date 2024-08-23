@@ -29,3 +29,9 @@ CREATE TABLE demo.customer
     cust_name TEXT,
     cust_age INT
 );
+
+## Drop and Create Schema and Table
+
+drop TABLE "demo"."customer";
+
+CREATE TABLE demo.customer (cust_id TEXT, cust_name TEXT, cust_age TEXT );
