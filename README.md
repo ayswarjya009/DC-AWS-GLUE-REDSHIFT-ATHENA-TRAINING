@@ -19,7 +19,7 @@ FROM    positivepercentage
 
 
 
-##Create Table
+## Create Table
 CREATE TABLE demo.customer
 (
     cust_id INT,
