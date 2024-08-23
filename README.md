@@ -50,3 +50,13 @@ FROM DATA CATALOG
 DATABASE 'hks-redshift-rs-db'
 IAM_ROLE 'arn:aws:iam::786461327180:role/HKSOregonRedShiftRole'
 CREATE EXTERNAL DATABASE IF NOT EXISTS;
+
+## Redshift Spectrum External Table
+CREATE EXTERNAL TABLE spectrum_schema.spectrum_table (
+    StateName TEXT,
+    Abbrev TEXT,
+    Code TEXT
+)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+LOCATION 's3://hks-demo-s3-bucket/input-state-csv/';
