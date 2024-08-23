@@ -35,3 +35,4 @@ CREATE TABLE demo.customer
 drop TABLE "demo"."customer";
 
 CREATE TABLE demo.customer (cust_id TEXT, cust_name TEXT, cust_age TEXT );
+CREATE TABLE demo.customercrawler (cust_id BIGINT, cust_name TEXT, cust_age BIGINT);
