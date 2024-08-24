@@ -171,3 +171,28 @@ $$ LANGUAGE SQL;
 
 select calculate_square(5) as SQUARE_OF_5;
 select calculate_square(8) as SQUARE_OF_8;
+
+
+create or replace function demo.classify_number(INTEGER)
+returns VARCHAR
+immutable
+AS $$
+select case
+when $1 > 0 then 'Positive'
+when $1 < 0 then 'Negative'
+END;
+$$ LANGUAGE SQL;
+
+select demo.classify_number(10) as classification;
+select demo.classify_number(-10) as classification;
+
+
+create or replace function demo.reverse_string(TEXT)
+returns TEXT
+immutable
+AS $$
+select REVERSE($1)
+$$ LANGUAGE SQL;
+
+select demo.reverse_string('Redshidt') as reversed_String;
+
