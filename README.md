@@ -61,6 +61,15 @@ ROW FORMAT DELIMITED
 FIELDS TERMINATED BY ','
 LOCATION 's3://hks-demo-s3-bucket/input-state-csv/';
 
+
+
+
+## Redshift Spectrum Fetching record from Internal and External Table using Join
+
+select * from demo.customer c
+JOIN spectrum_schema.orders o 
+ON c.cust_id= o.customer_id;
+
 ## Create Table Syntax Employee Table
 
 create table demo.employees(
@@ -72,9 +81,13 @@ create table demo.employees(
     department VARCHAR(50)
 );
 
+## Insert Record Command in Emplyees Table
 
-## Redshift Spectrum Fetching record from Internal and External Table using Join
+INSERT INTO employees (employee_id, name, designation, salary, hire_date, department)
+VALUES
+    (1, 'John Doe', 'Developer', 75000.00, '2023-01-15', 'Engineering'),
+    (2, 'Jane Smith', 'Sales Manager', 85000.00, '2022-11-03', 'Sales'),
+    (3, 'Alice Johnson', 'HR Specialist', 60000.00, '2024-06-12', 'Human Resources'),
+    (4, 'Bob Brown', 'Marketing Coordinator', 52000.00, '2024-02-25', 'Marketing'),
+    (5, 'Charlie Davis', 'Data Analyst', 68000.00, '2023-09-20', 'Data Science');
 
-select * from demo.customer c
-JOIN spectrum_schema.orders o 
-ON c.cust_id= o.customer_id;
