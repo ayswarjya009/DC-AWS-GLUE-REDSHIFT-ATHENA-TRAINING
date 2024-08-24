@@ -61,6 +61,17 @@ ROW FORMAT DELIMITED
 FIELDS TERMINATED BY ','
 LOCATION 's3://hks-demo-s3-bucket/input-state-csv/';
 
+## Create Table Syntax Employee Table
+
+create table demo.employees(
+    employee_id INTEGER,
+    name VARCHAR(100),
+    designation VARCHAR(50),
+    salary NUMERIC(10,2),
+    hire_date DATE DEFAULT CURRENT_DATE,
+    department VARCHAR(50)
+);
+
 
 ## Redshift Spectrum Fetching record from Internal and External Table using Join
 
