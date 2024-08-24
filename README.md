@@ -158,3 +158,16 @@ VALUES
 COMMIT;
 
 ROLLBACK;
+
+
+## Functions in Redshift Cluster
+
+create or replace function demo.calculate_square(INTEGER)
+returns INTEGER
+immutable
+AS $$
+select $1 * $1
+$$ LANGUAGE SQL;
+
+select calculate_square(5) as SQUARE_OF_5;
+select calculate_square(8) as SQUARE_OF_8;
