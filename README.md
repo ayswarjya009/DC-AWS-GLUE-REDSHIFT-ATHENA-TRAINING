@@ -196,3 +196,35 @@ $$ LANGUAGE SQL;
 
 select demo.reverse_string('Redshidt') as reversed_String;
 
+
+## Stored Procedures in Redshift
+
+create or replace procedure demo.insert_employee(
+    emp_id INTEGER, 
+    emp_name VARCHAR, 
+    emp_designation VARCHAR, 
+    emp_sal NUMERIC, 
+    emp_hire_date DATE, 
+    emp_dept VARCHAR
+    )
+    AS $$
+    BEGIN
+        INSERT INTO demo.employees(employee_id, name, designation, salary, hire_date, department)
+        VALUES (emp_id,emp_name,emp_designation,emp_sal,emp_hire_date,emp_dept);
+    END;
+    $$ LANGUAGE plpgsql;
+
+
+    CALL demo.insert_employee(10,'Alice', 'Developer', 75000, '2023-01-15', 'Engineering');
+
+    select * from demo.employees;
+
+    DROP procedure demo.insert_employee(
+    emp_id INTEGER, 
+    emp_name VARCHAR, 
+    emp_designation VARCHAR, 
+    emp_sal NUMERIC, 
+    emp_hire_date DATE, 
+    emp_dept VARCHAR
+    );
+
