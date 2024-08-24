@@ -91,3 +91,70 @@ VALUES
     (4, 'Bob Brown', 'Marketing Coordinator', 52000.00, '2024-02-25', 'Marketing'),
     (5, 'Charlie Davis', 'Data Analyst', 68000.00, '2023-09-20', 'Data Science');
 
+## AWS Redhift Cluster View Script
+
+create table demo.employees(
+    employee_id INTEGER,
+    name VARCHAR(100),
+    designation VARCHAR(50),
+    salary NUMERIC(10,2),
+    hire_date DATE DEFAULT CURRENT_DATE,
+    department VARCHAR(50)
+);
+
+INSERT INTO demo.employees (employee_id, name, designation, salary, hire_date, department)
+VALUES
+(101, 'Hitesh', 'Cloud Engineer', 100000.00, '2024-08-24', 'Engineering'),
+(1, 'John Doe', 'Developer', 75000.00, '2023-01-15', 'Engineering'),
+(2, 'Jane Smith', 'Sales Manager', 85000.00, '2022-11-03', 'Sales'),
+(3, 'Alice Johnson', 'HR Specialist', 60000.00, '2024-06-12', 'Human Resources'),
+(4, 'Bob Brown', 'Marketing Coordinator', 52000.00, '2024-02-25', 'Marketing'),
+(5, 'Charlie Davis', 'Data Analyst', 68000.00, '2023-09-20', 'Data Science');
+
+select * from demo.employees;
+
+
+CREATE OR REPLACE VIEW demo.all_employees AS
+select * from demo.employees;
+
+select * from demo.all_employees;
+
+create or replace view demo.avg_salary_by_department AS
+select department as dept, avg(salary) as avg_salary
+from demo.employees
+GROUP BY department;
+
+select * from demo.avg_salary_by_department;
+
+create or replace view demo.high_salary_emp AS
+select * from demo.employees
+where salary > 60000;
+
+select * from demo.high_salary_emp;
+
+
+create or replace view demo.high_salary_emp AS
+select * from demo.employees
+where salary > 70000;
+
+select * from demo.high_salary_emp;
+
+DROP VIEW IF EXISTS demo.employeess;
+
+DROP VIEW IF EXISTS demo.all_employees;
+
+DROP VIEW IF EXISTS demo.high_salary_emp;
+
+
+BEGIN;
+INSERT INTO demo.employees (employee_id, name, designation, salary, hire_date, department)
+VALUES
+(102, 'Aman', 'Cloud Engineer', 100000.00, '2024-08-24', 'Engineering');
+
+INSERT INTO demo.employees (employee_id, name, designation, salary, hire_date, department)
+VALUES
+(103, 'Rohan', 'Cloud Engineer', 100000.00, '2024-08-24', 'Engineering');
+
+COMMIT;
+
+ROLLBACK;
