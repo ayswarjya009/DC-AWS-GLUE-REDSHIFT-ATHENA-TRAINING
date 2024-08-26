@@ -1,0 +1,6 @@
+order_id,customer_id,customer_name,customer_email,item_id,item_name,item_price,item_quantity,order_date
+1,1001,John Doe,john@example.com,1,Laptop,1200,1,2024-08-23
+1,1001,John Doe,john@example.com,2,Mouse,20,2,2024-08-23
+2,1002,Jane Smith,jane@example.com,3,Keyboard,45,1,2024-08-24
+2,1002,Jane Smith,jane@example.com,4,Monitor,300,2,2024-08-24
+3,1003,Bob Johnson,bob@example.com,5,Printer,150,1,2024-08-25
