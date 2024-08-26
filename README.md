@@ -228,3 +228,6 @@ create or replace procedure demo.insert_employee(
     emp_dept VARCHAR
     );
 
+## AWS Athena Documentation Link
+
+https://docs.aws.amazon.com/athena/latest/ug/creating-tables.html
