@@ -231,3 +231,15 @@ create or replace procedure demo.insert_employee(
 ## AWS Athena Documentation Link
 
 https://docs.aws.amazon.com/athena/latest/ug/creating-tables.html
+
+## AWS Lambda Role for AWS Athena
+![image](https://github.com/user-attachments/assets/7b1c9c01-76f8-4860-9841-2d3c3a143265)
+
+AmazonAthenaFullAccess
+AmazonRedshiftFullAccess
+AmazonS3FullAccess
+AWSGlueConsoleFullAccess
+AWSGlueServiceRole
+AWSLambda_FullAccess
+CloudWatchLogsFullAccess
+
