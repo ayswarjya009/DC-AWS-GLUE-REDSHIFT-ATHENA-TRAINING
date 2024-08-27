@@ -11,4 +11,4 @@ df = spark.read.csv(file_path, header=True, inferSchema=True)
 
 
 
-transformed_df = df.filter(df["some_column"] > 100).select("column1", "column2")
+transformed_df = df.filter(df["customer_id"] > 1002).select("customer_id", "customer_name")
