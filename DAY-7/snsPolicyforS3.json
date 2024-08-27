@@ -1,0 +1,16 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "sns:Publish",
+      "Resource": "arn:aws:sns:region:account-id:topic-name",
+      "Condition": {
+        "ArnLike": {
+          "aws:SourceArn": "arn:aws:s3:::your-bucket-name"
+        }
+      }
+    }
+  ]
+}
