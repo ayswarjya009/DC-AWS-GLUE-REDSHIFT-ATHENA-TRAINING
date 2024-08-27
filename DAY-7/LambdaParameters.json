@@ -1,0 +1,4 @@
+{
+  "table_name": "customers",
+  "condition": "customer_id>1003"
+}
