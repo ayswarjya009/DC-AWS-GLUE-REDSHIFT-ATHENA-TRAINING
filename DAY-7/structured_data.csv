@@ -1,0 +1,6 @@
+id,name,date_string_column,salary,department,position
+1,John Doe,2024-08-15,75000,Engineering,Software Engineer
+2,Jane Smith,2024-08-16,85000,Marketing,Marketing Manager
+3,Emily Johnson,2024-08-17,62000,HR,HR Specialist
+4,Michael Brown,2024-08-18,95000,Engineering,DevOps Engineer
+5,Jessica Lee,2024-08-19,72000,Sales,Sales Representative
