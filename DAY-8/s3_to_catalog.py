@@ -11,10 +11,19 @@ response = glue_client.create_database(
 )
 print("Database Created: ", response)
 
+
+
+
 from awsglue.context import GlueContext
 from pyspark.context import SparkContext
 from awsglue.dynamicframe import DynamicFrame
-
 glueContext = GlueContext(SparkContext.getOrCreate())
 spark = glueContext.spark_session
+
+
+
+
+s3_input_path = "s3://your-bucket-name/folder/your-data-file.csv"
+
+
 
