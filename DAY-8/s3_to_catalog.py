@@ -23,7 +23,9 @@ spark = glueContext.spark_session
 
 
 
-s3_input_path = "s3://your-bucket-name/folder/your-data-file.csv"
+s3_input_path = "s3://hks-demo/input-customer-csv/customers.csv"
 
 
+df = spark.read.format("csv").option("header", "true").load(s3_input_path)
+df.show()
 
